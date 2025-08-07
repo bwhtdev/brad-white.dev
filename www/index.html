@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Global Metadata -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/ico" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Font preloads -->
+  <link rel="preload" href="/fonts/Baunk.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="/fonts/Crenzo.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="/fonts/TriakisFont-Regular.otf" as="font" type="font/otf" crossorigin />
+
+  <!-- Primary Meta Tags -->
+  <title>{title}</title>
+  <meta name="title" content={title} />
+  <meta name="description" content={desc} />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={Astro.url} />
+  <meta property="twitter:title" content={title} />
+  <meta property="twitter:description" content={desc} />
+  <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+  <script src="tailwind.min.js"></script>
+  <style is:global>
+    @font-face {
+      font-family: 'Crenzo';
+      src: url('/fonts/Crenzo.ttf');
+      font-weight: bold;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Triakis';
+      src: url('/fonts/TriakisFont-Regular.otf');
+      font-weight: bold;
+    }
+    @font-face {
+      font-family: 'Baunk';
+      src: url('/fonts/Baunk.ttf');
+      font-style: normal;
+    }
+
+    :root {
+      --pri-dark: 144, 60, 60;
+      --sec-dark: 163, 82, 82;
+
+      --pri: 250, 160, 160;
+      --sec: 208, 138, 138;
+    } 
+  </style>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-pri-dark: rgb(var(--pri-dark));
+      --color-sec-dark: rgb(var(--sec-dark));
+      --color-pri: rgb(var(--pri));
+      --color-sec: rgb(var(--sec));
+      
+      --font-crenzo: 'Crenzo';
+      --font-baunk: 'Baunk';
+      --font-triakis: 'Triakis';
+    }
+    
+    * {
+      @apply selection:bg-sec dark:selection:bg-sec-dark;
+    }
+
+    body {
+      @apply bg-pri dark:bg-pri-dark font-triakis;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      /*color: rgb(var(--gray-dark));*/
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body class="">
+  <div class="relative space-y-5">
+    <main class='mx-auto min-h-full max-w-4xl py-16 sm:px-16'>
+      <!-- Dark Mode Btn -->
+      <!-- Hero -->
+      <section class='justify-center py-4 font-xl'>
+        <h1 class='font-crenzo font-extrabold text-gray-900 dark:text-gray-100'>Hi, I'm Brad!<h1>
+        <h2 class='my-2 font-baunk text-gray-800 dark:text-gray-200'>Fullstack Programmer<h2>
+        <p class='my-4 text-gray-700 dark:text-gray-300 font-triakis'>
+          <span class='relative'>I develop, design and deploy <bold class='text-transparent bg-clip-text bg-gradient-to-r dark:from-[#FAA0A0] dark:via-[#B67979] dark:to-[#D08A8A] from-[#903c3c] via-[#D08A8A] to-[#a35252]'>eloquent</bold> and <bold class='text-transparent bg-clip-text bg-gradient-to-r dark:from-[#FAA0A0] dark:via-[#B67979] dark:to-[#D08A8A] from-[#903c3c] via-[#D08A8A] to-[#a35252]'>efficient</bold> apps to the wild web.</span>
+          <br/><br/>
+          <span class='relative'>I'm currently learning <i>Ruby, Nix and Golang</i> and experimenting with <i>self-hosting</i>.</span>
+        </p>
+        <!-- Links -->
+      </section>
+
+      <!-- Projects -->
+      <!-- Tech -->
+
+      <!--<h1 class='text-4xl font-crenzo text-clifford'>Brad White</h1>-->
+
+      <!-- Footer -->
+    </main>
+  </div>
+</body>
+</html>
